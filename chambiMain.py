@@ -85,7 +85,7 @@ def run(x, i):
             else:
                 win_pos_value = f"{strline2},700"
             params = {
-                "win_scale": 0.45,
+                "win_scale": scale_windows,
                 "win_pos": win_pos_value,
                 "win_size": "500,700"
             }
