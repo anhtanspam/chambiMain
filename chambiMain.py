@@ -24,6 +24,7 @@ linkNoteAccDie = dataLoad.fileAccDie
 accPerTurn = int(dataLoad.accPerTurn)
 ref_group_link = dataLoad.ref_group_link
 linkPicture = dataLoad.linkPicture
+scale_windows = dataLoad.scale_windows
 colour_in_rgb = str(dataLoad.colour_in_rgb)
 
 api_url = "http://127.0.0.1:19995/api/v3/profiles/{action}/{id}"
