@@ -180,8 +180,15 @@ def run(x, i):
                 except:pass
                           
                 iframe = WebDriverWait(driver, 20).until(EC.frame_to_be_available_and_switch_to_it((By.XPATH, '//iframe[@class="payment-verification"]')))
+                print(f"{tenProfile} wait 10s for Checking banner popup to close ...")
                 try:
-                    element = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, '//button[text()="Go to Web version"]')))
+                    element = WebDriverWait(driver, 8).until(EC.element_to_be_clickable((By.XPATH, '//div[@class="_container_1df7o_14"]//div[@class="_header_q0ezh_11"]/div[1]')))
+                    actions = ActionChains(driver)
+                    actions.move_to_element(element).click().perform()
+                    time.sleep(2)
+                except:pass
+                try:
+                    element = WebDriverWait(driver, 6).until(EC.element_to_be_clickable((By.XPATH, '//button[text()="Go to Web version"]')))
                     actions = ActionChains(driver)
                     actions.move_to_element(element).click().perform()
                     time.sleep(3)
@@ -194,8 +201,20 @@ def run(x, i):
                     driver.switch_to.window(driver.window_handles[0])
                     iframe = WebDriverWait(driver, 20).until(EC.frame_to_be_available_and_switch_to_it((By.XPATH, '//iframe[@class="payment-verification"]')))
                     time.sleep(1)
-                except:pass
-
+                except:pass        
+                for closeBanner in range(2):
+                    try:
+                        element = WebDriverWait(driver, 3).until(EC.element_to_be_clickable((By.XPATH, '//div[@class="_container_1df7o_14"]//div[@class="_header_q0ezh_11"]/div[1]')))
+                        actions = ActionChains(driver)
+                        actions.move_to_element(element).click().perform()
+                        time.sleep(2)
+                    except:pass
+                    try:
+                        element = WebDriverWait(driver, 3).until(EC.element_to_be_clickable((By.XPATH, '//div[@class="_container_1df7o_14"]//div[@class="_header_n1egb_11"]/div[2]/div[1]')))
+                        actions = ActionChains(driver)
+                        actions.move_to_element(element).click().perform()
+                        time.sleep(2)
+                    except:pass
                 element = WebDriverWait(driver, 20).until(EC.element_to_be_clickable((By.XPATH, '//div[@id="root"]/div[1]/div[1]/div[1]/div[2]/div[2]/button[1]//*[@class="_button_img_17fy4_119"]')))
                 actions = ActionChains(driver)
                 actions.move_to_element(element).click().perform()
@@ -258,9 +277,15 @@ def run(x, i):
                     driver.execute_script("arguments[0].click();", element)
                 except:pass
                 iframe = WebDriverWait(driver, 20).until(EC.frame_to_be_available_and_switch_to_it((By.XPATH, '//iframe[@class="payment-verification"]')))
-                time.sleep(2)
+                print(f"{tenProfile} wait 10s for Checking banner popup to close ...")
                 try:
-                    element = WebDriverWait(driver, 10).until(EC.element_to_be_clickable((By.XPATH, '//button[text()="Go to Web version"]')))
+                    element = WebDriverWait(driver, 8).until(EC.element_to_be_clickable((By.XPATH, '//div[@class="_container_1df7o_14"]//div[@class="_header_q0ezh_11"]/div[1]')))
+                    actions = ActionChains(driver)
+                    actions.move_to_element(element).click().perform()
+                    time.sleep(2)
+                except:pass
+                try:
+                    element = WebDriverWait(driver, 6).until(EC.element_to_be_clickable((By.XPATH, '//button[text()="Go to Web version"]')))
                     actions = ActionChains(driver)
                     actions.move_to_element(element).click().perform()
                     time.sleep(3)
@@ -273,7 +298,20 @@ def run(x, i):
                     driver.switch_to.window(driver.window_handles[0])
                     iframe = WebDriverWait(driver, 20).until(EC.frame_to_be_available_and_switch_to_it((By.XPATH, '//iframe[@class="payment-verification"]')))
                     time.sleep(1)
-                except:pass
+                except:pass        
+                for closeBanner in range(2):
+                    try:
+                        element = WebDriverWait(driver, 3).until(EC.element_to_be_clickable((By.XPATH, '//div[@class="_container_1df7o_14"]//div[@class="_header_q0ezh_11"]/div[1]')))
+                        actions = ActionChains(driver)
+                        actions.move_to_element(element).click().perform()
+                        time.sleep(2)
+                    except:pass
+                    try:
+                        element = WebDriverWait(driver, 3).until(EC.element_to_be_clickable((By.XPATH, '//div[@class="_container_1df7o_14"]//div[@class="_header_n1egb_11"]/div[2]/div[1]')))
+                        actions = ActionChains(driver)
+                        actions.move_to_element(element).click().perform()
+                        time.sleep(2)
+                    except:pass
                 element = WebDriverWait(driver, 20).until(EC.presence_of_element_located((By.XPATH, '//div[@id="root"]/div[1]/div[1]/div[1]/div[2]/div[2]/button[1]//*[@class="_button_img_17fy4_119"]')))
                 break
             except:pass
